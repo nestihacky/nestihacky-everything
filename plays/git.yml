@@ -1,0 +1,9 @@
+---
+- name: common
+  hosts: git
+  sudo: yes
+  roles:
+  - nestihacky.git_core
+  - nestihacky.git_daemon
+  - nestihacky.gitolite
+  - nestihacky.cgit

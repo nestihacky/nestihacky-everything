@@ -1,9 +1,12 @@
 ---
-ansible_ssh_user: vagrant
-
 common_hostname_name: nestihacky
 common_hostname_domain: local
 common_resolv_search: local
 common_resolv_nameservers:
 - 8.8.8.8
 - 8.8.4.4
+
+gitolite_admin_key: "{{ lookup('env','HOME') }}/.ssh/id_rsa.pub"
+
+cgit_hostname: "{{ inventory_hostname }}"
+cgit_selinux: no # centos doesn't know httpd_git_content_t

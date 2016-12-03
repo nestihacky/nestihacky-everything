@@ -1,4 +1,28 @@
 ---
 - src: https://github.com/nestihacky/ansible-role-common.git
   version: master
-  name: common
+  name: nestihacky.common
+
+- src: https://github.com/nestihacky/ansible-role-epel.git
+  version: master
+  name: nestihacky.epel
+
+- src: https://github.com/nestihacky/ansible-role-git-core.git
+  version: master
+  name: nestihacky.git_core
+
+- src: https://github.com/nestihacky/ansible-role-git-daemon.git
+  version: master
+  name: nestihacky.git_daemon
+
+- src: https://github.com/nestihacky/ansible-role-gitolite.git
+  version: master
+  name: nestihacky.gitolite
+
+- src: https://github.com/nestihacky/ansible-role-apache.git
+  version: master
+  name: nestihacky.apache
+
+- src: https://github.com/nestihacky/ansible-role-cgit.git
+  version: master
+  name: nestihacky.cgit

@@ -6,6 +6,10 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "plays/site.yml"
     ansible.host_key_checking = false
     ansible.extra_vars = "group_vars/vagrant"
+    ansible.groups = {
+      "vagrant" => ["centos"],
+      "git:children" => ["vagrant"],
+    }
 
     # ansible.tags = ["dmarc"]
     # ansible.skip_tags = ["firewalld"]
