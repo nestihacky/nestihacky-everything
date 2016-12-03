@@ -1,0 +1,9 @@
+---
+ansible_ssh_user: vagrant
+
+common_hostname_name: nestihacky
+common_hostname_domain: local
+common_resolv_search: local
+common_resolv_nameservers:
+- 8.8.8.8
+- 8.8.4.4

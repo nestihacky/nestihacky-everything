@@ -1,0 +1,4 @@
+---
+- src: https://github.com/nestihacky/ansible-role-common.git
+  version: master
+  name: common

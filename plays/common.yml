@@ -1,0 +1,6 @@
+---
+- name: common
+  hosts: all
+  sudo: yes
+  roles:
+  - common
