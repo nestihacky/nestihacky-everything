@@ -26,3 +26,7 @@
 - src: https://github.com/nestihacky/ansible-role-cgit.git
   version: master
   name: nestihacky.cgit
+
+- src: https://github.com/nestihacky/ansible-role-limnoria.git
+  version: master
+  name: nestihacky.limnoria

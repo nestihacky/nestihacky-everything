@@ -1,0 +1,6 @@
+---
+- name: limnoria
+  hosts: limnoria
+  sudo: yes
+  roles:
+  - nestihacky.limnoria

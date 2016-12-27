@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
     ansible.groups = {
       "vagrant" => ["centos"],
       "git:children" => ["vagrant"],
+      "limnoria:children" => ["vagrant"],
     }
 
     # ansible.tags = ["dmarc"]
