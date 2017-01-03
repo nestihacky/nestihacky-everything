@@ -1,12 +1,104 @@
 ---
-common_hostname_name: nestihacky
-common_hostname_domain: local
+common_hostname_name: servername
+common_hostname_domain: nestihacky.local
 common_resolv_search: local
 common_resolv_nameservers:
-- 8.8.8.8
-- 8.8.4.4
+- 208.67.222.222
+- 208.67.220.220
 
 gitolite_admin_key: "{{ lookup('env','HOME') }}/.ssh/id_rsa.pub"
 
 cgit_hostname: "{{ inventory_hostname }}"
 cgit_selinux: no # centos doesn't know httpd_git_content_t
+
+# probably redundant
+devel_ssl_cert: /etc/pki/tls/certs/localhost.crt
+devel_ssl_key: /etc/pki/tls/private/localhost.key
+
+mailserver_admin_email: "postmaster@{{ common_hostname_domain }}"
+
+mailserver_ssl_cert: "{{ devel_ssl_cert }}"
+mailserver_ssl_key: "{{ devel_ssl_key }}"
+#mailserver_ssl_cert: "/etc/letsencrypt/live/{{ common_hostname_domain }}/cert.pem"
+#mailserver_ssl_key: "/etc/letsencrypt/live/{{ common_hostname_domain }}/privkey.pem"
+
+mailserver_db_username: mailuser
+mailserver_db_password: CHANGE_ME_MAIL
+mailserver_db_database: mailserver
+mailserver_opendmarc_db_username: opendmarc
+mailserver_opendmarc_db_password: CHANGE_ME_DMARC
+mailserver_opendmarc_db_database: opendmarc
+
+mailserver_hostname: "{{ common_hostname_name }}.{{ common_hostname_domain }}"
+mailserver_domain: "{{ common_hostname_domain }}"
+mailserver_domains:
+  - name: "{{ common_hostname_domain }}"
+    pk_id: 1
+  - name: "lists.{{ common_hostname_domain }}"
+    pk_id: 2
+mailserver_users:
+  - account: root
+    domain: "{{ common_hostname_domain }}"
+    password_hash: $6$PentA.6C8Nfq7a6o$ZCSqECXNoVzlC4umZAIoIBoVmnKI7QrCli9/N0aazs7Nwj6aXX3s/JuQmxi3GpgxtEBv.NFbk.N//J/Wg4Bhf1
+    domain_pk_id: 1
+  - account: testing
+    domain: "{{ common_hostname_domain }}"
+    password_hash: $6$PentA.6C8Nfq7a6o$ZCSqECXNoVzlC4umZAIoIBoVmnKI7QrCli9/N0aazs7Nwj6aXX3s/JuQmxi3GpgxtEBv.NFbk.N//J/Wg4Bhf1
+    domain_pk_id: 1
+mailserver_aliases:
+  - source: "testalias@{{ common_hostname_domain }}"
+    destination: "testing@{{ common_hostname_domain }}"
+    domain_pk_id: 1
+  - source: "maildebug@{{ common_hostname_domain }}"
+    destination: "root@{{ common_hostname_domain }}"
+    domain_pk_id: 1
+
+pagure_db_pass: CHANGE_ME_PAGURE
+pagure_secret_key: CHANGE_ME_PAGURE_SECRET
+pagure_secret_salt_email: CHANGE_ME_PAGURE_SALT_EMAIL
+
+pagure_domain: "git.{{ common_hostname_domain }}"
+pagure_app_url: 'https://{{ pagure_domain }}'
+pagure_doc_app_url: 'https://docs.{{ pagure_domain }}'
+pagure_git_url_ssh: 'ssh://git@{{ pagure_domain }}/'
+pagure_git_url_git: 'https://{{ pagure_domain }}/'
+pagure_eventsource_source: 'https://{{ pagure_domain }}:8088'
+
+pagure_from_email: 'pagure@{{ pagure_domain }}'
+pagure_email_error: "root@{{ common_hostname_domain }}"
+pagure_domain_email_notifications: '{{ pagure_domain }}'
+
+postgresql_databases:
+  - name: pagure
+  - name: "{{ mailserver_db_database }}"
+    notify: import sql postfix
+  - name: "{{ mailserver_opendmarc_db_database }}"
+    notify: import sql opendmarc
+
+postgresql_users:
+  - name: pagure
+    pass: "{{ pagure_db_pass }}"
+    encrypted: no
+  - name: "{{ mailserver_db_username }}"
+    pass: "{{ mailserver_db_password }}"
+    encrypted: no       # denotes if the password is already encrypted.
+  - name: "{{ mailserver_opendmarc_db_username }}"
+    pass: "{{ mailserver_opendmarc_db_password }}"
+    encrypted: no       # denotes if the password is already encrypted.
+
+postgresql_user_privileges:
+  - name: pagure
+    db: pagure
+    priv: "ALL"
+  - name: "{{ mailserver_db_username }}"
+    db: "{{ mailserver_db_database }}"
+    priv: "ALL"
+  - name: "{{ mailserver_opendmarc_db_username }}"
+    db: "{{ mailserver_opendmarc_db_database }}"
+    priv: "ALL"
+
+# manual depsolving /o\
+postfix_smtpd_milters_append: ',unix:/var/run/pagure/paguresock'
+postfix_alias_maps_append: ', hash:/etc/mailman/aliases'
+postfix_local_recipient_maps_append: ', $alias_maps'
+postfix_mydestination_append: ', $mydomain, lists.$mydomain' 

@@ -1,0 +1,5 @@
+---
+- hosts: mailman
+  sudo: yes
+  roles:
+  - nestihacky.mailman

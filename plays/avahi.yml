@@ -1,0 +1,6 @@
+---
+- name: avahi
+  hosts: avahi
+  sudo: yes
+  roles:
+  - nestihacky.avahi

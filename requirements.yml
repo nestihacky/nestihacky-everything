@@ -19,14 +19,34 @@
   version: master
   name: nestihacky.gitolite
 
-- src: https://github.com/nestihacky/ansible-role-apache.git
-  version: master
-  name: nestihacky.apache
-
 - src: https://github.com/nestihacky/ansible-role-cgit.git
   version: master
   name: nestihacky.cgit
 
+- src: https://github.com/nestihacky/ansible-role-pagure.git
+  version: master
+  name: nestihacky.pagure
+
+- src: https://github.com/nestihacky/ansible-role-apache.git
+  version: master
+  name: nestihacky.apache
+
 - src: https://github.com/nestihacky/ansible-role-limnoria.git
   version: master
   name: nestihacky.limnoria
+
+- src: https://github.com/nestihacky/ansible-role-mailserver.git
+  version: master
+  name: nestihacky.mailserver
+
+- src: https://github.com/nestihacky/ansible-role-mailman.git
+  version: master
+  name: nestihacky.mailman
+
+- src: https://github.com/nestihacky/ansible-role-postgresql.git
+  version: master
+  name: nestihacky.postgresql
+
+- src: https://github.com/nestihacky/ansible-role-avahi.git
+  version: master
+  name: nestihacky.avahi

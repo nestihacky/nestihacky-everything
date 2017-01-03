@@ -1,0 +1,5 @@
+- name: pagure
+  hosts: pagure
+  sudo: yes
+  roles:
+    - nestihacky.pagure

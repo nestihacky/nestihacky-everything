@@ -2,3 +2,6 @@
 - include: common.yml
 - include: git.yml
 - include: limnoria.yml
+- include: mailserver.yml
+- include: mailman.yml
+- include: pagure.yml

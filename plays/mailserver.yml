@@ -1,0 +1,5 @@
+---
+- hosts: mailserver
+  sudo: yes
+  roles:
+  - nestihacky.mailserver

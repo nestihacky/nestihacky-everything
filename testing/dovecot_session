@@ -1,0 +1,108 @@
+$ openssl s_client -connect nestihacky.local:993
+CONNECTED(00000003)
+depth=0 C = --, ST = SomeState, L = SomeCity, O = SomeOrganization, OU = SomeOrganizationalUnit, CN = nestihacky.local, emailAddress = root@nestihacky.local
+verify error:num=20:unable to get local issuer certificate
+verify return:1
+depth=0 C = --, ST = SomeState, L = SomeCity, O = SomeOrganization, OU = SomeOrganizationalUnit, CN = nestihacky.local, emailAddress = root@nestihacky.local
+verify error:num=21:unable to verify the first certificate
+verify return:1
+---
+Certificate chain
+ 0 s:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=nestihacky.local/emailAddress=root@nestihacky.local
+   i:/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=nestihacky.local/emailAddress=root@nestihacky.local
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIID+jCCAuKgAwIBAgICKfcwDQYJKoZIhvcNAQELBQAwgbExCzAJBgNVBAYTAi0t
+MRIwEAYDVQQIDAlTb21lU3RhdGUxETAPBgNVBAcMCFNvbWVDaXR5MRkwFwYDVQQK
+DBBTb21lT3JnYW5pemF0aW9uMR8wHQYDVQQLDBZTb21lT3JnYW5pemF0aW9uYWxV
+bml0MRkwFwYDVQQDDBBuZXN0aWhhY2t5LmxvY2FsMSQwIgYJKoZIhvcNAQkBFhVy
+b290QG5lc3RpaGFja3kubG9jYWwwHhcNMTcwMTAzMTczMjIyWhcNMTgwMTAzMTcz
+MjIyWjCBsTELMAkGA1UEBhMCLS0xEjAQBgNVBAgMCVNvbWVTdGF0ZTERMA8GA1UE
+BwwIU29tZUNpdHkxGTAXBgNVBAoMEFNvbWVPcmdhbml6YXRpb24xHzAdBgNVBAsM
+FlNvbWVPcmdhbml6YXRpb25hbFVuaXQxGTAXBgNVBAMMEG5lc3RpaGFja3kubG9j
+YWwxJDAiBgkqhkiG9w0BCQEWFXJvb3RAbmVzdGloYWNreS5sb2NhbDCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAMiP8LMyLa1eBlv5itAneK3KVX7/+/hH
+4fKjnv3UeeQomuGjB1mCCT5c9apBzmH+39Y7o7bqSSoME7GCBunNu/SjIjaQitxZ
+34R0AgIW9mtj2WAIvzwqXI4/+NiBGfBbluM7smhtelCj4G8OpixOmVKIHyqxwVjw
+RX6WlAsueLAmRMzjRsff0mtuf31Ti+8Me6h9qJCmVmvuQ2s54eeTy29N63RHd1DO
+r4Ku5HAxVrxAJvDeJWb1mqy6Q28q4V/uS7DtB1GCKeLc6ytlc+YCsd9wZ21xRfPv
+ETS6/3V1awOyOEa+d4P/iZp7R18RuAP+zuhrwsHWvC8WOlHNgZepKb0CAwEAAaMa
+MBgwCQYDVR0TBAIwADALBgNVHQ8EBAMCBeAwDQYJKoZIhvcNAQELBQADggEBAB4w
+WkxquGBRr0phzM8p8UpwODtkq0o//NWDjvIbvrOXCEd7eqGeTPGc02XK2c5JgVYE
+QIuKw7eDSr9za3LXD+rFF2389g1Ek2v9tW2DXbIWWgu5nZ/RejYnHGuFV8xmFHb7
+PrL1VnU9erA0JgqKIQqaZql69KMsoDk/BP1taJHEwZj4xddBb8ZFHHvSxRGJdowt
+sAtKHs+ORiztSUgWmQDqwg2fDrSiHqlCbUKCOmg9hBDx9G2yDYosAHLwXhsXOyyS
+KOFOfO0y+AT+CdEoOK0xuVlV8o4NcgQA4e5LCuAYqT7C7Ti8e97Frz6v5D+OXJnX
+3fmT7nVa3kao0JAY5Fo=
+-----END CERTIFICATE-----
+subject=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=nestihacky.local/emailAddress=root@nestihacky.local
+issuer=/C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=nestihacky.local/emailAddress=root@nestihacky.local
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Server Temp Key: ECDH, P-384, 384 bits
+---
+SSL handshake has read 1713 bytes and written 359 bytes
+---
+New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 41D358EBE320CAB6CF6FACA729CF0B0DBC5D36F91139AC85A115663A63C25C30
+    Session-ID-ctx: 
+    Master-Key: B07DFF7D9E22CBC91CCF0B4F407C8C7800908E26B5F481F770BBB36E43A3F16150D46E712289AD6098B7F9B673BD1A0F
+    Key-Arg   : None
+    Krb5 Principal: None
+    PSK identity: None
+    PSK identity hint: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - a2 8e 3d eb 1c f9 ca 09-20 e7 ab d6 9d 6c d6 dd   ..=..... ....l..
+    0010 - 92 1e c4 e4 43 78 66 11-98 74 fd 3c d5 7c 86 2c   ....Cxf..t.<.|.,
+    0020 - 0f 0e 58 4b b9 59 46 bd-24 7a d6 f8 93 f1 0c 95   ..XK.YF.$z......
+    0030 - 97 c4 59 fe 62 0f c9 3a-71 50 9b 99 b2 6e 63 bd   ..Y.b..:qP...nc.
+    0040 - 22 5f 44 77 4c ed 53 b5-83 42 1d fb 08 6c 53 ef   "_DwL.S..B...lS.
+    0050 - ac c2 f9 cb 58 c6 42 d6-25 1e a8 7c 1c 04 2f 6f   ....X.B.%..|../o
+    0060 - 4a c9 b8 03 76 35 72 41-67 33 ac b8 9c ee 82 b7   J...v5rAg3......
+    0070 - 34 88 38 b5 72 8b 3c 2b-09 dc 81 3e 6c 07 df e6   4.8.r.<+...>l...
+    0080 - fb 17 7f 94 c7 f3 d2 1e-ef 6d 1e ac 16 ea 53 56   .........m....SV
+    0090 - 43 3f 49 3c 64 5d f9 c2-eb 74 0c b7 24 d9 38 5e   C?I<d]...t..$.8^
+
+    Start Time: 1483467885
+    Timeout   : 300 (sec)
+    Verify return code: 21 (unable to verify the first certificate)
+---
+* OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+a login "root" "CHANGE_ME"
+a NO [AUTHENTICATIONFAILED] Authentication failed.
+a login root CHANGE_ME
+a NO [AUTHENTICATIONFAILED] Authentication failed.
+a login root@nestihacky.local CHANGE_ME
+a OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS SPECIAL-USE BINARY MOVE] Logged in
+b select inbox
+* FLAGS (\Answered \Flagged \Deleted \Seen \Draft)
+* OK [PERMANENTFLAGS (\Answered \Flagged \Deleted \Seen \Draft \*)] Flags permitted.
+* 0 EXISTS
+* 0 RECENT
+* OK [UIDVALIDITY 1483467993] UIDs valid
+* OK [UIDNEXT 1] Predicted next UID
+b OK [READ-WRITE] Select completed (0.056 secs).
+c list "" *
+* LIST (\HasNoChildren \Drafts) "." Drafts
+* LIST (\HasNoChildren \Sent) "." Sent
+* LIST (\HasNoChildren \Junk) "." Junk
+* LIST (\HasNoChildren \Trash) "." Trash
+* LIST (\HasNoChildren \Archive) "." Archive
+* LIST (\HasNoChildren) "." INBOX
+c OK List completed.
+e logout
+* BYE Logging out
+e OK Logout completed.
+closed
+

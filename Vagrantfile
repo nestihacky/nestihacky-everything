@@ -10,6 +10,9 @@ Vagrant.configure("2") do |config|
       "vagrant" => ["centos"],
       "git:children" => ["vagrant"],
       "limnoria:children" => ["vagrant"],
+      "mailserver:children" => ["vagrant"],
+      "mailman:children" => ["vagrant"],
+      "pagure:children" => ["vagrant"],
     }
 
     # ansible.tags = ["dmarc"]
