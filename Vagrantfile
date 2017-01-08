@@ -20,6 +20,15 @@ Vagrant.configure("2") do |config|
     ansible.verbose = "v"
   end
 
+  if Vagrant.has_plugin? "vagrant-libvirt"
+    config.vm.provider :libvirt do |domain|
+      domain.memory = 2048
+      domain.cpus = 2
+      domain.nested = true
+      domain.volume_cache = 'none'
+    end
+  end
+
   if Vagrant.has_plugin? "vagrant-hostmanager"
     config.hostmanager.enabled = true
     config.hostmanager.manage_host = true
