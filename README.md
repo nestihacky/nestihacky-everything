@@ -3,6 +3,8 @@ nestihacky
 
 Top level repository integrating all roles.
 
+More info https://wiki.base48.cz/Nestihacky
+
 Usage
 -----
 
