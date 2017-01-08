@@ -117,6 +117,9 @@ apache_ssl_listen: 14443
 pagure_ssl_listen: 14444
 mailman_ssl_listen: 14445
 
+# SELinux
+httpd_execmem: True # pagure
+
 # sniproxy
 sniproxy_routes:
   - domain: "lists.{{ common_hostname_domain }}"
