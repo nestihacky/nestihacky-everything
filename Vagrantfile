@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
       "mailserver:children" => ["vagrant"],
       "mailman:children" => ["vagrant"],
       "pagure:children" => ["vagrant"],
+      "sniproxy:children" => ["vagrant"],
     }
 
     # ansible.tags = ["dmarc"]

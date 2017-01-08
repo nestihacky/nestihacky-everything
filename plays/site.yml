@@ -5,3 +5,4 @@
 - include: mailserver.yml
 - include: mailman.yml
 - include: pagure.yml
+- include: sniproxy.yml

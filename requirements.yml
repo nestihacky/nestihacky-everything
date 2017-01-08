@@ -50,3 +50,7 @@
 - src: https://github.com/nestihacky/ansible-role-avahi.git
   version: master
   name: nestihacky.avahi
+
+- src: https://github.com/nestihacky/ansible-role-sniproxy.git
+  version: master
+  name: nestihacky.sniproxy

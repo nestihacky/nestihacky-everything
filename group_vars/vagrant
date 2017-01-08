@@ -102,3 +102,16 @@ postfix_smtpd_milters_append: ',unix:/var/run/pagure/paguresock'
 postfix_alias_maps_append: ', hash:/etc/mailman/aliases'
 postfix_local_recipient_maps_append: ', $alias_maps'
 postfix_mydestination_append: ', $mydomain, lists.$mydomain' 
+
+apache_ssl_listen: 14443
+pagure_ssl_listen: 14444
+mailman_ssl_listen: 14445
+
+# sniproxy
+sniproxy_routes:
+  - domain: "lists.{{ common_hostname_domain }}"
+    target: "127.0.0.1:{{ mailman_ssl_listen }}"
+  - domain: "git.{{ common_hostname_domain }}"
+    target: "[::0]:{{ pagure_ssl_listen }}"
+  - domain: "{{ common_hostname_domain }}"
+    target: "127.0.0.1:{{ apache_ssl_listen }}"
