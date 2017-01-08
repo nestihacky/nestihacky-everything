@@ -5,3 +5,4 @@
   roles:
   - nestihacky.common
   - nestihacky.epel
+  - nestihacky.ssh

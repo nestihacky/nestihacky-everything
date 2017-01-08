@@ -54,3 +54,7 @@
 - src: https://github.com/nestihacky/ansible-role-sniproxy.git
   version: master
   name: nestihacky.sniproxy
+
+- src: https://github.com/nestihacky/ansible-role-ssh.git
+  version: master
+  name: nestihacky.ssh
