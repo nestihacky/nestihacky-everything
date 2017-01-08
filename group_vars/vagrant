@@ -130,3 +130,12 @@ sniproxy_routes:
     target: "[::0]:{{ pagure_ssl_listen }}"
   - domain: "{{ common_hostname_domain }}"
     target: "127.0.0.1:{{ apache_ssl_listen }}"
+
+# letsencrypt
+letsencrypt_autogenerate: False # dry run
+letsencrypt_email: "root@{{ common_hostname_domain }}"
+letsencrypt_domains:
+  - "{{ common_hostname_domain }}"
+  - "lists.{{ common_hostname_domain }}"
+  - "git.{{ common_hostname_domain }}"
+  - "docs.git.{{ common_hostname_domain }}"

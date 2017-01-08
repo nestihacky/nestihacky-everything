@@ -58,3 +58,7 @@
 - src: https://github.com/nestihacky/ansible-role-ssh.git
   version: master
   name: nestihacky.ssh
+
+- src: https://github.com/nestihacky/ansible-role-letsencrypt.git
+  version: master
+  name: nestihacky.letsencrypt

@@ -6,3 +6,4 @@
 - include: mailman.yml
 - include: pagure.yml
 - include: sniproxy.yml
+- include: letsencrypt.yml
