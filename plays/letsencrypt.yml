@@ -1,0 +1,5 @@
+---
+- hosts: letsencrypt
+  sudo: yes
+  roles:
+  - nestihacky.letsencrypt

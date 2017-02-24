@@ -1,0 +1,5 @@
+- name: sniproxy
+  hosts: sniproxy
+  sudo: yes
+  roles:
+    - nestihacky.sniproxy
