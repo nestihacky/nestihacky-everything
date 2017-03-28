@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
       "pagure:children" => ["vagrant"],
       "sniproxy:children" => ["vagrant"],
       "letsencrypt:children" => ["vagrant"],
+      "graphite:children" => ["vagrant"],
     }
 
     # ansible.tags = ["dmarc"]

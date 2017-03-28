@@ -62,3 +62,7 @@
 - src: https://github.com/nestihacky/ansible-role-letsencrypt.git
   version: master
   name: nestihacky.letsencrypt
+
+- src: https://github.com/nestihacky/ansible-role-graphite.git
+  version: master
+  name: nestihacky.graphite
