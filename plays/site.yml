@@ -7,3 +7,4 @@
 - include: pagure.yml
 - include: sniproxy.yml
 - include: letsencrypt.yml
+- include: graphite.yml

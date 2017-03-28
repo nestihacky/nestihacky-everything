@@ -1,0 +1,6 @@
+---
+- name: graphite
+  hosts: graphite
+  sudo: yes
+  roles:
+  - nestihacky.graphite
