@@ -36,6 +36,9 @@ Vagrant.configure("2") do |config|
     config.hostmanager.manage_host = true
   end
 
+#  config.vm.define "fedora", primary: true do |fedora|
+#    fedora.vm.box = "fedora/25-cloud-base"
+#  end
   config.vm.define "centos", primary: true do |centos|
     centos.vm.box = "centos/7"
   end
