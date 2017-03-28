@@ -36,6 +36,7 @@ mailserver_domains:
 mailserver_users:
   - account: root
     domain: "{{ common_hostname_domain }}"
+    # !! hashed CHANGE_ME for all users
     password_hash: $6$PentA.6C8Nfq7a6o$ZCSqECXNoVzlC4umZAIoIBoVmnKI7QrCli9/N0aazs7Nwj6aXX3s/JuQmxi3GpgxtEBv.NFbk.N//J/Wg4Bhf1
     domain_pk_id: 1
   - account: testing
