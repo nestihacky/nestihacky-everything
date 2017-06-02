@@ -33,6 +33,10 @@ mailserver_domains:
     pk_id: 1
   - name: "lists.{{ common_hostname_domain }}"
     pk_id: 2
+
+# You can generate password hashes for dovecot with:
+# doveadm pw -s SHA512-CRYPT
+
 mailserver_users:
   - account: root
     domain: "{{ common_hostname_domain }}"
