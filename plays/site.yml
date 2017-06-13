@@ -8,3 +8,4 @@
 - include: sniproxy.yml
 - include: letsencrypt.yml
 - include: graphite.yml
+- include: moin.yml

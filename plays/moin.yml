@@ -1,0 +1,6 @@
+---
+- name: moin
+  hosts: moin
+  sudo: yes
+  roles:
+  - nestihacky.moin

@@ -66,3 +66,7 @@
 - src: https://github.com/nestihacky/ansible-role-graphite.git
   version: master
   name: nestihacky.graphite
+
+- src: https://github.com/nestihacky/ansible-role-moin.git
+  version: master
+  name: nestihacky.moin

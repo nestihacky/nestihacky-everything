@@ -124,6 +124,7 @@ apache_ssl_listen: 14443
 pagure_ssl_listen: 14444
 mailman_ssl_listen: 14445
 graphite_ssl_listen: 14446
+moin_ssl_listen: 14447
 
 # SELinux
 httpd_execmem: True # pagure
@@ -136,6 +137,8 @@ sniproxy_routes:
     target: "[::0]:{{ pagure_ssl_listen }}"
   - domain: "graphite.{{ common_hostname_domain }}"
     target: "[::0]:{{ graphite_ssl_listen }}"
+  - domain: "moin.{{ common_hostname_domain }}"
+    target: "127.0.0.1:{{ moin_ssl_listen }}"
   - domain: "{{ common_hostname_domain }}"
     target: "127.0.0.1:{{ apache_ssl_listen }}"
 
@@ -147,7 +150,20 @@ letsencrypt_domains:
   - "lists.{{ common_hostname_domain }}"
   - "git.{{ common_hostname_domain }}"
   - "docs.git.{{ common_hostname_domain }}"
+  - "moin.{{ common_hostname_domain }}"
 
 # graphite
 graphite_domain: "graphite.{{ common_hostname_domain }}"
 graphite_secret_csrf_key: CHANGE_ME_GRAPHITE_CSRF
+
+# moin
+moin_wikis:
+- name: testwiki
+  vhost: moin.{{ common_hostname_domain }}
+  sitename: TestWiki
+  front_page: FrontPage
+  ssl_cert: /etc/pki/tls/certs/localhost.crt
+  ssl_key: /etc/pki/tls/private/localhost.key
+  ssl_chain: /etc/pki/tls/certs/localhost.crt
+  extra_config:
+  - "actions_excluded = multiconfig.DefaultConfig.actions_excluded + ['newaccount']"
